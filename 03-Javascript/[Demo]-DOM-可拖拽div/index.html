@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>可拖拽 Div </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .dragged {
+            border: 1px solid red;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dragged"></div>
+</body>
+
+<script>
+    var dragged = document.querySelector('.dragged')
+    let dragging = false
+    let position = null
+
+    dragged.addEventListener('mousedown', function (e) {
+        dragging = true
+        position = [e.clientX, e.clientY]
+    })
+
+    dragged.addEventListener('mousemove', function (e) {
+        if (dragging === false) { return }
+        const x = e.clientX
+        const y = e.clientY
+        const offsetX = x - position[0]
+        const offsetY = y - position[1]
+        const left = parseInt(dragged.style.left || 0)
+        const top = parseInt(dragged.style.top || 0)
+        dragged.style.left = left + offsetX + 'px'
+        dragged.style.top = left + offsetY + 'px'
+        position = [x, y]
+    })
+
+    dragged.addEventListener('mouseup', function (e) {
+        dragging = false
+    })
+
+
+</script>
+
+</html>

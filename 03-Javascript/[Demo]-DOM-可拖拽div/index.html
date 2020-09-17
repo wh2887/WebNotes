@@ -33,19 +33,19 @@
 
     dragged.addEventListener('mousedown', function (e) {
         dragging = true
-        position = [e.clientX, e.clientY]
+        position = [e.clientX, e.clientY]   // 获取鼠标位置
     })
 
     dragged.addEventListener('mousemove', function (e) {
         if (dragging === false) { return }
         const x = e.clientX
-        const y = e.clientY
+        const y = e.clientY                //  记录上一次鼠标点击时的坐标
         const offsetX = x - position[0]
-        const offsetY = y - position[1]
+        const offsetY = y - position[1]     //  偏移量
         const left = parseInt(dragged.style.left || 0)
         const top = parseInt(dragged.style.top || 0)
         dragged.style.left = left + offsetX + 'px'
-        dragged.style.top = left + offsetY + 'px'
+        dragged.style.top = top + offsetY + 'px'
         position = [x, y]
     })
 

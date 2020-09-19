@@ -8,18 +8,31 @@
 </head>
 
 <body>
-    <button id="button">点我</button>
+    <button id="button1">点我</button>
+    <button id="button2">点我2</button>
     <script>
         // 节流  ===>  CD 冷却
         function fn() { console.log('1') }
         let cd = false
-        button.onclick = () => {
+        button1.onclick = () => {
             if (cd) {
                 //
             } else {
                 fn()
                 cd = true
                 setTimeout(() => { cd = false }, 3000)
+            }
+        }
+        // 防抖 ===> 带着一起做 相机防抖
+        let timerID = null
+        button2.onclick = () => {
+            if (timerID) {
+                window.clearTimeout(timerID)
+            } else {
+                timeID = setTimeout((timerId) => {
+                    fn()
+                    timerId = null
+                }, 5000)
             }
         }
     </script>

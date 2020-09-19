@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖和节流</title>
+</head>
+
+<body>
+    <button id="button">点我</button>
+    <script>
+        // 节流  ===>  CD 冷却
+        function fn() { console.log('1') }
+        let cd = false
+        button.onclick = () => {
+            if (cd) {
+                //
+            } else {
+                fn()
+                cd = true
+                setTimeout(() => { cd = false }, 3000)
+            }
+        }
+    </script>
+</body>
+
+</html>

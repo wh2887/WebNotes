@@ -1,6 +1,6 @@
 console.log('我是 main.js 的内容！')
-const button1 = document.querySelector('#button1')
-button1.onclick = () => {
+const getCss = document.querySelector('#getCss')
+getCss.onclick = () => {
     const request = new XMLHttpRequest()
     request.open('get', '/style.css')
     request.onload = () => {

@@ -1,0 +1,111 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+input{
+    border: none;
+    outline-style: none;
+    background: inherit;
+    color: inherit;
+}
+
+body{
+   width: 100vw;
+   height: 100vh; 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: rgb(99, 161, 149);
+}
+
+.wrapper{
+    width: 20vw;
+    height: 60vh;
+    min-width: 372px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #75b6a9;
+    box-shadow: 0 0 3px rgba(117,182,169, .5);
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+.wrapper .logo{
+    z-index: 1;
+}
+.wrapper form{
+    z-index: 1;
+}
+.wrapper .in,.out{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 50%;
+    background: #3e978b;
+    transform: translate(-50%,-50%);
+}
+.wrapper .in{
+    animation: in .5s ease-in forwards;
+    width: 0;
+    height: 0;
+}
+.wrapper .out{
+    width: 1500px;
+    height: 1500px;
+    animation: out .5s ease-out forwards;
+}
+
+@keyframes in {
+    0%{
+        width: 0;
+        height: 0;
+    }
+    100%{
+        width: 1500px;
+        height: 1500px;
+    }
+}
+@keyframes out {
+    0%{
+        width: 1500px;
+        height: 1500px;
+    }
+    100%{
+        width: 0;
+        height: 0;
+    }
+}
+
+.login{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login input{
+    font-size: 22px;
+}
+
+.login-item{
+    border-bottom: 1px solid #709fb0;
+    padding: .2em;
+    margin-top:  3em;
+    width: 80%;
+}
+
+.login-buttons{
+    margin-top:  3em;
+    display: flex;
+    overflow: hidden;
+}
+
+.submit,.register{
+    border: 1px solid #709fb0;
+    padding: 1em 2em;
+    border-radius: 1em;
+    margin: 0 .5em;
+}
+

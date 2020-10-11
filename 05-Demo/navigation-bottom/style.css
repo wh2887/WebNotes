@@ -56,7 +56,7 @@ body{
 .item[data-state=selected]{
     color: #333333;
 }
-.item[data-state=selected]::after{
+/* .item[data-state=selected]::after{
     content: '';
     display: block;
     position: absolute;
@@ -66,5 +66,5 @@ body{
     width: 2em;
     height: 1.1em;
     border-radius: 10%;
-}
+} */
 
